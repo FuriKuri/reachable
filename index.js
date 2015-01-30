@@ -4,12 +4,13 @@ var phantomjs = require('phantomjs');
 var binPath = phantomjs.path;
  
 var childArgs = [
-  path.join(__dirname, 'script.js'),
-  'some other argument (passed to phantomjs script)'
+  path.join(__dirname, 'script.js'), 'https://duckduckgo.com/', 'pg-index'
 ];
- console.log("start");
+console.log("start");
 childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
-  console.log(err);
-  console.log(stdout);
-  console.log(stderr); 
+	if (!err) {
+		var result = JSON.parse(stdout);
+		console.log(result.page);
+		console.log(result.element);
+	}
 });
