@@ -1,6 +1,6 @@
 # reachable
 
-Small libary to test if a system is reachable.
+Small library to test if a system is reachable.
 
 ## ping
 ```javascript
