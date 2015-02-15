@@ -12,3 +12,12 @@ reachable.ping('127.0.0.1', 5, function(result) {
   console.log(result.packetLoss);
 });
 ```
+## page
+```javascript
+var reachable = require('reachable');
+reachable.page('https://google.com', 'gbqfq' ,function(result) {
+  console.log(result.page);
+  console.log(result.element);
+  console.log(result.type);
+});
+```
